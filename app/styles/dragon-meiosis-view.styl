@@ -1,0 +1,32 @@
+
+.meiosis, .meiosis-parent
+  position: relative
+  border: 1px solid lightgrey
+  width: 300px
+  height: 300px
+  .cell
+    width: 300px
+    height: 304px
+    overflow: hidden
+
+.controls
+  margin-top: 10px
+  .buttons
+    display: inline-block
+    button
+      width: 38px
+      height: 38px
+      padding: 5px
+      &:hover
+        // This is dumb, but it prevents the buttons from sticking in an active color on IE
+        width: 38px
+
+  .scrub
+    width: 125px
+    display: inline-block
+    margin-left: 15px
+    position: relative
+    top: -4px
+    .ui-slider-handle
+      width: 6px
+      margin-left: -3px
