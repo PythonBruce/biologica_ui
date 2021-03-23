@@ -14,8 +14,8 @@
             DragonChromosomePulldownView = require('views/dragon-chromosome-pulldown-view');
 
         Helpers.disableAlleles(BioLogica.Species.Dragon, ['HU','wd','ta','fb','aw']);
-        var femaleDragon = new BioLogica.Organism.createOrganism(BioLogica.Species.Dragon, 'a:p,b:p,a:S,a:h,b:h,a:w,b:W,a:L,b:l,a:t,b:t,a:F,b:f,a:a,b:a,a:B,b:B', BioLogica.FEMALE),
-            maleDragon   = new BioLogica.Organism.createOrganism(BioLogica.Species.Dragon, 'a:p,b:p,a:S,a:H,b:h,a:W,b:w,a:L,b:l,a:T,b:t,a:f,a:a,a:B', BioLogica.MALE),
+        var femaleDragon = new BioLogica.Organism.createOrganism(BioLogica.Species.Dragon, 'a:p,b:p,a:S,b:s,a:h,b:h,a:w,b:W,a:L,b:l,a:t,b:t,a:F,b:f,a:a,b:a,a:B,b:B', BioLogica.FEMALE),
+            maleDragon   = new BioLogica.Organism.createOrganism(BioLogica.Species.Dragon, 'a:p,b:p,a:S,b:s,a:H,b:h,a:W,b:w,a:L,b:l,a:T,b:t,a:f,a:a,a:B', BioLogica.MALE),
             view = new DragonView(femaleDragon, '#example-dragon', {showCharacteristics: true, visibleTraits: ['color']}),
             chromoView = new DragonChromosomePulldownView(femaleDragon, '#chromosome-pulldowns', {hiddenGenes: ['scales','plates']});
 
