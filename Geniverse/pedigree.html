@@ -1,0 +1,70 @@
+<html>
+<head>
+<title>Applet Test Including Comet Chat with StreamHub</title>
+<link rel="stylesheet" href="jquery.jgrowl.css" type="text/css" />
+<script src="streamhub-min.js"></script>
+<script type="text/javascript" src="library.js"></script>
+<script type="text/javascript" src="jquery-1.4.js"></script>
+<script type="text/javascript" src="jGrowl-1.2.4/jquery.jgrowl.js"></script>
+<script type="text/javascript">
+//$(document).ready(function() {
+var multi_org_applet = document.getElementById("multi-org-applet");
+function createNewOrganism(){
+	document.getElementById("multi-org-applet").addNewOrganism("test");
+}
+
+function getSelectedOrganismsInMulti(){
+	return document.getElementById("multi-org-applet").getSelectedOrganisms();
+}
+
+function getSelectedOrganismsInPedigree(){
+	return document.getElementById("pedigree-applet").getSelectedOrganisms();
+}
+
+function addSelectedOrganismsToPedigree(){
+	document.getElementById("pedigree-applet").addOrganisms(getSelectedOrganismsInMulti());
+}
+	
+function addSelectedOrganismsToMulti(){
+	document.getElementById("multi-org-applet").addOrganisms(getSelectedOrganismsInPedigree());
+}
+//});
+</script>
+</head>
+<body>
+<h1>Applet tests</h1>
+<p>
+	<div style="border: 1px solid black;">
+	<applet id="multi-org-applet" code="org/concord/biologica/applet/MultipleOrganismApplet.class"
+	    archive="lib/biologica-applets-0.1.0-SNAPSHOT.jar, lib/biologica-0.1.0-SNAPSHOT.jar, lib/jna-jnidispatch-3.0.9-macosx.nar, lib/libjri-0.4-1-SNAPSHOT.jar, lib/bsf-2.4.0.jar, lib/jna-jnidispatch-3.0.9-win32.nar, lib/libjri-native-osx-0.4-1-SNAPSHOT-macosx.nar, lib/commons-logging-1.0.4.jar, lib/jna-jws-3.0.9.jar, lib/loader-0.1.0-SNAPSHOT.jar, lib/framework-0.1.0-SNAPSHOT.jar, lib/jna-examples-0.1.0-SNAPSHOT.jar, lib/js-1.6R5.jar"
+	    width="550" height="280">
+	    Your browser is completely ignoring the applet tag!
+	  </applet>
+	</div>
+</p>
+
+<a href="javascript:createNewOrganism();">create new organism</a><br/>
+<a href="javascript:addSelectedOrganismsToPedigree();">add selected organism to pedigree</a><br/>
+<a href="javascript:addSelectedOrganismsToMulti();">add selected organism to multi</a><br/>
+
+<p>
+  <applet id="pedigree-applet" code="org/concord/biologica/applet/PedigreeApplet.class"
+    archive="lib/biologica-applets-0.1.0-SNAPSHOT.jar, lib/biologica-0.1.0-SNAPSHOT.jar, lib/jna-jnidispatch-3.0.9-macosx.nar, lib/libjri-0.4-1-SNAPSHOT.jar, lib/bsf-2.4.0.jar, lib/jna-jnidispatch-3.0.9-win32.nar, lib/libjri-native-osx-0.4-1-SNAPSHOT-macosx.nar, lib/commons-logging-1.0.4.jar, lib/jna-jws-3.0.9.jar, lib/loader-0.1.0-SNAPSHOT.jar, lib/framework-0.1.0-SNAPSHOT.jar, lib/jna-examples-0.1.0-SNAPSHOT.jar, lib/js-1.6R5.jar"
+    width="550" height="280">
+    Your browser is completely ignoring the applet tag!
+  </applet>
+</p>
+<div class="controls">
+  <a href="javascript:breedOrganism();">breed new organism</a><br/>
+  <a href="javascript:displayChildInfo();">display child info</a><br/>
+  <a href="javascript:breedAndNotify();">breed and notify</a><br/>
+  <a href="javascript:setChildAlleles();">set child alleles</a><br/>
+</div>
+
+<div style="height: 5em;" id="child-info">
+  Unknown child info...
+</div>
+
+
+</body>
+</html>
