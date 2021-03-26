@@ -3,10 +3,10 @@ var applet = document.getElementById("applet");
 function getApplet() {
 	applet = document.getElementById("applet");
 }
-function printEnumeration(enum) {
+function printEnumeration(enumer) {
 	var out = ""
-	while (enum.hasMoreElements()) {
-		var e = enum.nextElement();
+	while (enumer.hasMoreElements()) {
+		var e = enumer.nextElement();
 		if (out != "") {
 			out += ", ";
 		}
